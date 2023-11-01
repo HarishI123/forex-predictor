@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <title>Forex Predictor</title>
+    <style>
+      .pad{
+        padding: 0rem 1rem;
+      }
+    </style>
+</head>
+<body>
+    <header class="text-gray-400 bg-gray-900 body-font">
+        <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+          <a class="flex title-font font-medium items-center text-white mb-4 md:mb-0">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full" viewBox="0 0 24 24">
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+            </svg>
+            <span class="ml-3 text-xl">Forex  Predictor</span>
+          </a>
+          <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
+            <a class="mr-5 hover:text-white pad" href="#">Home</a>
+            <a class="mr-5 hover:text-white pad" href="https://en.wikipedia.org/wiki/Foreign_exchange_market">About</a>
+            <a class="mr-5 hover:text-white pad" href="https://www.investopedia.com/articles/forex/11/why-trade-forex.asp">Forex Guide</a>
+            <a class="mr-5 hover:text-white pad" href="https://github.com/HarishI123">Github</a>
+          </nav>
+        </div>
+      </header> 
+      <section class="text-gray-400 bg-gray-900 body-font">
+        <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
+          <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 md:mb-0 mb-10">
+            <img class="object-cover object-center rounded" alt="hero" src="{{url_for('static', filename='forex.jpg')}}">
+          </div>
+          <div class="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
+            <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-white">Forex
+              <br class="hidden lg:inline-block">Predictor
+            </h1>
+            <p class="mb-8 leading-relaxed">Forex Predictor, Use this system to forecast or predict the forex market value of next several days. Give your feedback if you encounter any error. </p>
+            <div class="flex justify-center">
+              <button class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg" onclick="window.location.href = 'https://github.com/HarishI123'">Github</button>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <form class="form-horizontal" action = "/predict/" method="post">
+        <section class="text-gray-400 bg-gray-900 body-font">
+          <div class="container px-5 py-24 mx-auto">
+            <div class="flex flex-col text-center w-full mb-12">
+              <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-white">Now, it's your predictor</h1>
+              <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Now, Use the Predictor! .</p>
+            </div>
+            <div class="flex lg:w-2/3 w-full sm:flex-row flex-col mx-auto px-8 sm:px-0 items-end sm:space-x-4 sm:space-y-0 space-y-4">
+              <div class="relative sm:mb-0 flex-grow w-full">
+                <label for="fromC" class="leading-7 text-sm text-gray-400">From Currency</label>
+                <input type="text" id="fromC" name="fromC" placeholder="inr" class="w-full bg-gray-800 bg-opacity-40 rounded border border-gray-700 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-900 focus:bg-transparent text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+              </div>
+              <div class="relative sm:mb-0 flex-grow w-full">
+                <label for="to" class="leading-7 text-sm text-gray-400">To Currency</label>
+                <input type="text" id="to" name="to" placeholder="usd" class="w-full bg-gray-800 bg-opacity-40 rounded border border-gray-700 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-900 focus:bg-transparent text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+              </div>
+            <div class="relative sm:mb-0 flex-grow w-full">
+              <label for="BloodPressure" class="leading-7 text-sm text-gray-400">Enter days</label>
+              <input type="days" id="days" name="days" placeholder="1-80" class="w-full bg-gray-800 bg-opacity-40 rounded border border-gray-700 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-900 focus:bg-transparent text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+            </div> 
+            <br> 
+
+            <div> 
+            <button type="submit" class="text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">Predict</button> 
+            </div> 
+        </section>     
+      </form>      
+</body>
+</html>

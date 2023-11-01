@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div style="background-color: #161b23;height:43rem;display:flex;justify-content: center;align-items: center;"">
+
+    <div class="row justify-content-md-center">
+        <div class="thumbnail">
+            {% if prediction: %}
+            <h1 style="color:#fff;text-align: center;">The FOREX price is {{ prediction }}</h1>
+            <img style="height: 400px;border-radius:15%;" src="{{url_for('static', filename='stock.webp')}}"/> 
+                
+            {% endif %}
+        </div>
+    </div>
+        
+</div>
+{% endblock %}
