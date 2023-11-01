@@ -3,4 +3,4 @@ services:
     name: AdsWebsite
     buildCommand: "./build.sh"
     env: python
-    startCommand: "gunicorn AdsWebsite.wsgi:application"
+    startCommand: "python app.py"
